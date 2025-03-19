@@ -7,4 +7,4 @@
 # ------------
 
 set -e
-docker run -it --rm -p 8081:80 -v $PWD:/docs -w /docs yakworks/bookworm:nginx-python mkdocs serve --dev-addr=0.0.0.0:80
+docker run -it --rm -p 8000:8000 -v $PWD:/project yakworks/bookworm:docmark-dev

@@ -95,3 +95,22 @@ massa, nec semper lorem quam in massa.
 >
 > Can also make them collapsible and put any content in here
 > ```
+
+/// note | Some title
+Some content
+///
+
+/// warning | Don't Do This
+Don't do this in your code!!!
+```
+	free(NULL);
+```
+///
+
+/// tab | Tab 1 title
+Tab 1 content
+///
+
+/// tab | Tab 2 title
+Tab 2 content
+///

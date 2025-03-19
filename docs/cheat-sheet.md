@@ -274,7 +274,23 @@ Remeber, HTML is valid markdown
 </div>
 </div>
 
-***
+## Git Links
+
+Links can be powerful and magiclinks helps. 
+
+- this is a repo @yakworks/gorm-tools
+- this is a github Pr https://github.com/yakworks/gorm-tools/pull/877
+- this is for a an issue https://github.com/yakworks/gorm-tools/issues/791
+
+-   https://github.com/facelessuser/pymdown-extensions/issues/1
+
+- domain9#1
+- yakworks/gorm-tools#1
+- gitlab:pycqa/flake8-engine#21
+- domain9!4
+- yakworks/gorm-tools!598
+- gitlab:pycqa/infrastructure!1
+- @basejump @jdabal
 
 ## Abbreviations
 
@@ -516,6 +532,10 @@ You can also use inline Markdown.
 | col 3 is | basic         |     $1600   |
 | col 2 is |   centered    |       $12   |
 |          |   **Total**   |   **$1612** |
+
+/// caption
+Fruit Count
+///
 
 | ==Table==                                   | __Format__                                              | 👀 *fun*                                        |
 | ------------------------------------------- | ------------------------------------------------------- | ----------------------------------------------- |

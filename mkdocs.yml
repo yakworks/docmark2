@@ -25,7 +25,7 @@ nav:
     - Math: reference/math.md
     - Tooltips: reference/tooltips.md
   
-
+dev_addr: 0.0.0.0:8081
 theme:
   name: material
   custom_dir: ./docs/overrides
@@ -89,6 +89,9 @@ markdown_extensions:
   - md_in_html
   - pymdownx.betterem:
       smart_enable: all
+  - pymdownx.blocks.admonition
+  - pymdownx.blocks.caption
+  - pymdownx.blocks.tab
   - pymdownx.caret
   - pymdownx.details
   - pymdownx.emoji:
@@ -104,10 +107,11 @@ markdown_extensions:
       normalize_issue_symbols: true
       repo_url_shorthand: true
       repo_url_shortener: true
-      # user: squidfunk
+      user: 9ci
       # repo: mkdocs-material
   - pymdownx.mark
   - pymdownx.smartsymbols
+  - pymdownx.saneheaders
   - pymdownx.snippets:
       auto_append:
         - includes/mkdocs.md
