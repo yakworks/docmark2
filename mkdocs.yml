@@ -1,0 +1,126 @@
+site_name: My Docs
+# Page tree
+nav:
+  - index.md
+  - Cheat Sheet: cheat-sheet.md
+  - specimen.md
+  - callouts.md
+  - Embedding: embedding/index.md
+  - Reference:
+    - reference/index.md
+    - Admonitions: reference/admonitions.md
+    - Annotations: reference/annotations.md
+    - Buttons: reference/buttons.md
+    - Code blocks: reference/code-blocks.md
+    - Content tabs: reference/content-tabs.md
+    - Data tables: reference/data-tables.md
+    - Diagrams: reference/diagrams.md
+    - Footnotes: reference/footnotes.md
+    - Formatting: reference/formatting.md
+    - Grids: reference/grids.md
+    - Icons, Emojis: reference/icons-emojis.md
+    - Images: reference/images.md
+    - Lists: reference/lists.md
+    - Math: reference/math.md
+    - Tooltips: reference/tooltips.md
+  
+
+theme:
+  name: material
+  custom_dir: ./docs/overrides
+  font:
+    text: Lato
+    code: Ubuntu Mono
+  palette:
+    - scheme: default
+      # primary: blue grey
+      primary: orange
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue grey
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - content.action.edit
+    - content.action.view
+    # - navigation.tabs
+    - toc.integrate
+    # - navigation.expand
+    # see https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/?h=toc+integrate#navigation-integration-without
+    # - toc.integrate
+    - header.autohide
+    - navigation.path
+    - announce.dismiss
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+
+plugins:
+  - search
+  - tags
+  - meta
+# hooks:
+#   - overrides/hooks/shortcodes.py
+
+extra_css:
+  - assets/styles.css
+markdown_extensions:
+  - toc:
+      # depth of the tocs
+      toc_depth: 3
+      permalink: true
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      repo_url_shortener: true
+      # user: squidfunk
+      # repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - sane_lists
+  # - mdx_truly_sane_lists:
+  #     nested_indent: 2
+  #     truly_sane: True
+  - github-callouts
+  - callouts

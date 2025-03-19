@@ -1,0 +1,63 @@
+[data-md-color-accent=orange] {
+    --md-accent-fg-color: #fb8c00;
+    --md-accent-fg-color--transparent: #ff6e421a;
+    --md-accent-bg-color: #fff;
+    --md-accent-bg-color--light: #ffffffb3
+}
+[data-md-color-primary=orange] {
+    --md-primary-fg-color: #fb8c00;
+    --md-primary-fg-color--light: #ff8a66;
+    --md-primary-fg-color--dark: #ff6e42;
+    --md-primary-bg-color: #fff;
+    --md-primary-bg-color--light: #ffffffb3
+    /* Change to blue for the anchors */
+    --md-typeset-a-color: #4051b5
+}
+[data-md-color-primary=orange]:not([data-md-color-scheme=slate]) {
+    --md-typeset-a-color: #4051b5
+}
+@media screen {
+    [data-md-color-scheme=slate][data-md-color-primary=orange] {
+        --md-typeset-a-color: #5e8bde
+    }
+}
+
+:root,[data-md-color-scheme=default] {
+    --md-default-fg-color--light: #000000b2;
+    --md-default-fg-color--lighter: #0000008a;
+}
+
+/* fixes code when in grid card */
+.md-typeset .grid .md-code__content {
+  display: block;
+}
+.md-typeset h1 {
+    color: var(--md-default-fg-color--lighter);
+}
+.md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
+    color: var(--md-default-fg-color--light);
+    font-weight: 600;
+}
+.md-typeset h2 {
+    border-bottom: 1px solid #F0F1F3;
+    margin-top: 1em;
+}
+.md-typeset h1 {
+    margin-bottom: 1em;
+    font-weight: 600;
+}
+/* make it a bit wider */
+/* .md-grid {
+    max-width: 70rem;
+} */
+/* first item in TOC is bold */
+.md-nav--secondary > .md-nav__list > .md-nav__item > .md-nav__link {
+  font-weight: 600;
+}
+/* add sublt border to right of main left side menu */
+.md-sidebar--primary .md-sidebar__inner {
+  border-right: 1px solid rgba(0, 0, 0, 0.07);
+}
+.md-nav--secondary {
+  border-left: 1px solid rgba(0, 0, 0, 0.07);
+}

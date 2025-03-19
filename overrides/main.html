@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block fonts %}
+  <!-- Add scripts that need to run before here -->
+  <!-- {{ super() }} -->
+  
+  {% if config.theme.font != false %}
+    {% set text = config.theme.font.get("text", "Roboto") %}
+    {% set code = config.theme.font.get("code", "Ubuntu Mono") %}
+    {% set hfont = config.theme.font.get("headers", "Roboto Slab") %}
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{
+        text | replace(' ', '+') + ':300,300i,400,400i,600,600i,700,700i,800,800i%7C' +
+        hfont | replace(' ', '+') + ':400,400i,500,500i,600,600i,700,700i%7C' +
+        code | replace(' ', '+') + ':400,400i,700,700i'
+      }}&display=fallback">
+    <style>
+      :root{
+        --md-text-font:"{{ text }}";
+        --md-code-font:"{{ code }}";
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: "{{ hfont }}","Georgia",Arial,sans-serif;
+      }
+    </style>
+  {% endif %}
+{% endblock %}
+{% block announce %}
+<style>
+.md-banner__inner {margin-top:0;margin-bottom:0;padding:0;}
+.md-banner {background-color:transparent;}
+.region--header{background-color:rgba(255,255,255,.9);width:100%;z-index:2}
+/* header.region--header{position:fixed;top:0;right:0;left:0} */
+.region--header .region--header__wrapper{max-width:1440px;margin-left:auto;margin-right:auto;position:relative;z-index:2;box-sizing:inherit}
+.region--header .region--header__logo{display:inline-block;float:left;margin:0;padding-left:1rem}
+.region--header__logo .site-logo--main{display:block;height:2.75rem;margin:0;padding:0;width:4.25rem}
+.header-navigation{font-size:.75rem;clear:none;float:right;padding-bottom:0;padding-right:.75rem}
+.header-navigation__menu{clear:both;overflow:visible;-webkit-transform-style:preserve-3d;width:100%;z-index:9999;display:inline;margin:0;padding:0}
+.header-navigation__menu-link{display:inline;line-height:1.5;margin-right:0;padding-right:0;width:auto;overflow:hidden;text-align:right;z-index:2}
+.region--header a{text-decoration:none}
+.header-navigation__menu-link a{padding-left:.75rem;padding-right:.75rem;color:#012b45;display:inline-block;font-weight:400;text-transform:uppercase;transition:background-color ease .2s}
+@media only screen and (max-width:500px){
+  .header-navigation{font-size:.7rem}
+  .header-navigation__menu-link a{padding-left:.25rem;padding-right:.25rem}
+  }
+.header-navigation__menu-link:last-child:not(.header-navigation__active-nav-item):not(:hover):not(:focus){color:#e8650c}
+.header-navigation__menu-link a:focus,.header-navigation__menu-link a:hover{color:#e8650c}
+/* .md-container{padding-top:6.5rem} */
+#header-docs{top:3.25rem}#background{display:none}#header-docs .md-logo{display:none}</style>
+<style media="print">#header-docs{top:0}#header-docs .md-logo{display:block}#header-website{display:none}.md-container{padding-top:0}.headroom--pinned{transform:translateY(0)}#background{position:fixed;top:250px;left:50px;z-index:9999999;background:0 0;min-height:30%;min-width:30%;display:block}#bg-text{color:rgba(211,211,211,.2);font-size:80px;transform:rotate(300deg);-webkit-transform:rotate(300deg)}</style>
+<header id="header-website" class="region--header" role="banner">
+  <div class="region--header__wrapper">
+    <a href="/" class="region--header__logo">
+      <img src="https://www.9ci.com/assets/img/logo.svg" alt="9ci logo" class="site-logo site-logo--main">
+    </a>
+    <nav role="navigation" class="header-navigation">
+      <ul id="js-navigation-menu" class="header-navigation__menu">
+      <li class="header-navigation__menu-link">
+        <a href="https://www.9ci.com/solutions">Solutions</a>
+      </li>
+      <li class="header-navigation__menu-link">
+        <a href="https://www.9ci.com/company">Company</a>
+      </li>
+      <li class="header-navigation__menu-link">
+        <a href="https://www.9ci.com/contact">Contact</a>
+      </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+{% endblock %}
