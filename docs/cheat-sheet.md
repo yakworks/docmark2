@@ -1,4 +1,4 @@
-# TL;DR Cheat Sheet
+# Cheat Sheet
 
 For a 60 second quick start on Markdown
 [commonmark has a great tutorial](http://commonmark.org/help/){.new-tab}
@@ -17,12 +17,12 @@ this is __bold__ and so is **this**  <br>
 can do code `inline like this x=2`
 ```
 
-this is _italic_ and so is *this*  <br>
-this is __bold__ and so is **this**  <br>
+this is *italic* and so is *this*  <br>
+this is __bold__ and so is __this__  <br>
 ^^underline^^, ^^__bold underline__^^  
 ~~strike through~~  
 ==highlight==  
-==*you* **can** ^^combine^^ ~~too~~==  
+==*you* __can__ ^^combine^^ ~~too~~==  
 can do code `inline like this x=2`
 
 </div>
@@ -34,14 +34,13 @@ can do code `inline like this x=2`
 ```md
 Put 2 spaces at the end of a line  
 to force a line break like this just did.
-just hitting enter doesnt work. 
 Can use a `<br>` as well to force a break like <br>
 we just did
 ```
 
 Put 2 spaces at the end of a line  
 to force a line break like this just did.
-just hitting enter doesnt work. 
+just hitting enter doesnt work.
 Can use a `<br>` as well to force a break like <br>
 we just did
 
@@ -53,108 +52,123 @@ we just did
 
 <div class="grid cards" markdown>
 
-```md
-- need a blank line above to start new list
-- valid bullet symbols `*`, `-` or '+'
-- nested lists
-    - 2 space indent when using mdx_truly_sane_lists
-    - 4 spaces when using stock sane_lists
+~~~md
 
-1. use *numbers* for ordered
-  1. nest indents need to be 4 spaces
-  2. foo
+-   need a blank line above to start new list
+-   valid bullet symbols `*`, `-` or '+'
 
-2. **numbers** can be in order
-  1. can also nest
+-   nested
+    - 4 space indent when using `mdx_truly_sane_lists`
+    - 4 spaces when using stock `sane_lists`
+    - best to use 4 spaces
 
-3. but it will fix them if not
+1.  Use *numbers* for ordered
+    1. nest indents need to be 4 spaces  
+    2. Its nice to allign the list to make it more readable
+2.  __numbers__ can be in order but will fix them if not
+3.  A comment block will force a new list to start 
 
-- list item with multiple paragraphs.
+<!-- A comment block will force a new list to start -->
 
-  anything like this paragraph
-  
-  should be indented by 2 or 4 spaces
+7. Start list with number other than 1
+7. Will keep that number as start
 
--   you can add blocks too, just indent by 2-4 spaces
+-   list item with multiple paragraphs.
 
-    > :memo: **Note:**
-    >
+    This is a paragraph
+
+    should be indented by 4 spaces
+
+-   you can add blocks too, just indent by 4 spaces
+
+    > :memo: __Note:__
     > - list under lists
     > - under lists
 
-- add tables too
+-   Admonitions work too
 
-  foo | bar
-  ----|----
-  some|data
+    > [!TIP] Hot tip
+    > This is a hot tip 🌶
 
-- add some code, indent by 6 spaces
+-   add tables too
 
-      var x=4
+    | foo  | bar  |
+    | ---- | ---- |
+    | some | data |
 
-- add some code, using tiks
-```
+-   add some code, indent by 8 spaces to kick in the code formattings
 
-var x=4
+        var x=4
 
-```
-this is part of the same list
+-   add some code in multiple paragraphs using tiks
 
-- all done
-```
+    ```
+    var x=4
+    ```
+
+    this is part of the same list
+
+-   all done
+
+~~~
 
 <div markdown>  
 
-- need a blank line above to start new list
-- valid bullet symbols `*`, `-` or '+'
-* nested
-  * 2 space indent when using mdx\_truly\_sane\_lists
-  * 4 spaces when using stock sane\_lists
+-   need a blank line above to start new list
+-   valid bullet symbols `*`, `-` or '+'
 
-1. use *numbers* for ordered
+-   nested
+    - 4 space indent when using `mdx_truly_sane_lists`
+    - 4 spaces when using stock `sane_lists`
+    - best to use 4 spaces
 
-2. nest indents need to be 4 spaces
+1.  Use *numbers* for ordered
+    1. nest indents need to be 4 spaces  
+    2. Its nice to allign the list to make it more readable
+2.  __numbers__ can be in order but will fix them if not
+3.  A comment block will force a new list to start 
 
-3. foo
+<!-- A comment block will force a new list to start -->
 
-4. **numbers** can be in order
+7. Start list with number other than 1
+7. Will keep that number as start
 
-5. can also nest
+-   list item with multiple paragraphs.
 
-6. but it will fix them if not
+    This is a paragraph
 
-*   list item with multiple paragraphs.
+    should be indented by 4 spaces
 
-    anything like this paragraph
+-   you can add blocks too, just indent by 4 spaces
 
-    should be indented by 2 or 4 spaces
+    > :memo: __Note:__
+    > - list under lists
+    > - under lists
 
-* you can add blocks too, just indent by 2-4 spaces
+-   Admonitions in a list
 
-  > :memo: **Note:**
-  >
-  > * list under lists
-  > * under lists
+    > [!TIP]
+    > 🌶 This is a hot tip
 
-* add tables too
+-   add tables too
 
-  | foo  | bar  |
-  | ---- | ---- |
-  | some | data |
+    | foo  | bar  |
+    | ---- | ---- |
+    | some | data |
 
-* add some code, indent by 6 spaces
+-   add some code, indent by 8 spaces to kick in the code formattings
 
-  ```
-  var x=4
-  ```
+        var x=4
 
-* add some code, using tiks
-  ```
-  var x=4
-  ```
-  this is part of the same list
+-   add some code in multiple paragraphs using tiks
 
-* all done
+    ```
+    var x=4
+    ```
+
+    this is part of the same list
+
+-   all done
 
 </div>
 
@@ -167,108 +181,95 @@ this is part of the same list
 <div class="grid cards" markdown>
 
 ```md
-- [ ] Task Lists `- [ ]`
-  - [x] x instead of space
-  - [x] will mark it complete
-- [ ] work just like lists
-  - can can contain indents
-  - or anything else a list can
+-   [ ] Task Lists `- [ ]`
+    - [x] x instead of space
+    - [x] will mark it complete
+-   [ ] work just like lists
+    - can can contain indents
+    - or anything else a list can
 
-1. Or can be nested under others lists
-  - [ ] like this
-  - [ ] and this
-
-2. This can help
-  - [ ] like this
-  - [ ] and this
+1.  Or can be nested under others lists
+    - [ ] like this
+    - [ ] and this
 ```
 
 <div markdown>
 
-* [ ] Task Lists `- [ ]`
-  * [x] x instead of space
-  * [x] will mark it complete
-* [ ] work just like lists
-  * can can contain indents
-  * or anything else a list can
+-   [ ] Task Lists `- [ ]`
+    - [x] x instead of space
+    - [x] will mark it complete
+-   [ ] work just like lists
+    - can can contain indents
+    - or anything else a list can
 
-1. Or can be nested under others lists
+1.  Or can be nested under others lists
+    - [ ] like this
+    - [ ] and this
 
-* [ ] like this
-* [ ] and this
-
-1. This can help
-
-* [ ] like this
-* [ ] and this
 
 </div>
 
 </div>
-
-***
 
 ## Links
 
 <div class="grid cards" markdown>
 
 ```md
-[simple link](https://www.google.com )
-[with optional title](https://www.google.com "Google's Homepage")
-point to a [relative file or md](./embedding/lucid.md) or
-mail link with emoji [📧](mailto:joshdev@9ci.com) or
-click this cloud icon to see the list of icon options
-[_cloud_{.icon}](https://material.io/icons/)
 
-or [use an image ![](images/dingus/image-small.png)](images/dingus/image.png)
+- [simple link](https://www.google.com)
+- [with optional title](https://www.google.com "Google's Homepage")  
+- point to a [relative file or md](./embedding/lucid.md)
+- mail link with [emoji 📧](mailto:joshdev@9ci.com) or  
+-   click this cloud icon to see the list of icon options  
+    [:material-material-design:](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/)
 
-[Reference-Style Links][some reference id]
-put link at bottom of paragraph or page.
-you can use numbers or text for
-[reference-style link definitions][1]
-or leave it empty and
-just use the [link text itself]
+Use an image as a link is kind of funky [![](images/dingus/image-small.png)](images/dingus/image.png)
 
-to [open in new tab](sandbox.md){.new-tab}
-use `{target=_blank} or {.new-tab}` attributes
-use it on [ref links][new tab]{.new-tab} too
+[Reference Links], like this, can keep the text more readable.  
+Put link at bottom of paragraph or page and just reference the text.  
+you can use numbers or text and re-label them like this [reference-style links][1]  
+or leave it empty and just let the link text flow [link text itself]
 
-Indenting _reference links_
-2 spaces is not required
-but a recommended convention
+to [open in new tab](index.md){.new-tab} use the `{.new-tab}` attribute  
+[works on refernece links too][new tab]{.new-tab}  
+or use an <a href="https://www.markdownguide.org" target="_blank">anchor link</a> too.  
+Remeber, HTML is valid markdown
 
-  [some reference id]: https://daringfireball.net/projects/markdown/syntax#link
-  [1]: http://reason.com/blog
-  [link text itself]: ./images/material.png
-  [new tab]: sandbox.md
+[Reference Links]: https://daringfireball.net/projects/markdown/syntax#link
+[9ci]: https://9ci.com
+[link text itself]: https://9ci.com
+[1]: http://reason.com/blog
+[new tab]: sandbox.md
 
 ```
 
 <div markdown>
 
-[simple link](https://www.google.com)
-[with optional title](https://www.google.com "Google's Homepage")
-point to a [relative file or md](./embedding/lucid.md) or
-mail link with emoji [📧](mailto:joshdev@9ci.com) or
-click this cloud icon to see the list of icon options
-_[cloud](https://material.io/icons/)_[{.icon}](https://material.io/icons/)
+- [simple link](https://www.google.com)
+- [with optional title](https://www.google.com "Google's Homepage")  
+- point to a [relative file or md](./embedding/lucid.md)
+- mail link with [emoji 📧](mailto:joshdev@9ci.com) or  
+-   click this cloud icon to see the list of icon options  
+    [:material-material-design:](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/)
 
-or [use an image](images/dingus/image.png) [![](images/dingus/image-small.png)](images/dingus/image.png)
+Use an image as a link is kind of funky [![](images/dingus/image-small.png)](images/dingus/image.png)
 
-[Reference-Style Links](https://daringfireball.net/projects/markdown/syntax#link)
-put link at bottom of paragraph or page.
-you can use numbers or text for
-[reference-style link definitions](http://reason.com/blog)
-or leave it empty and
-just use the [link text itself](./images/material.png)
+[Reference Links], like this, can keep the text more readable.  
+Put link at bottom of paragraph or page and just reference the text.  
+you can use numbers or text and re-label them like this [reference-style links][1]  
+or leave it empty and just let the link text flow [link text itself]
 
-to [open in new tab](sandbox.md){.new-tab}
-us `{target=_blank} or {.new-tab}` attributes
-use it on [ref links](sandbox.md){.new-tab} too
+to [open in new tab](index.md){.new-tab} use the `{.new-tab}` attribute  
+[works on refernece links too][new tab]{.new-tab}  
+or use an <a href="https://www.markdownguide.org" target="_blank">anchor link</a> too.  
+Remeber, HTML is valid markdown
 
-_reference links_ can be at bottom
-of paragraph. Indenting 2 spaces is not
-required but a recommended convention
+[Reference Links]: https://daringfireball.net/projects/markdown/syntax#link
+[9ci]: https://9ci.com
+[link text itself]: https://9ci.com
+[1]: http://reason.com/blog
+[new tab]: sandbox.md
 
 </div>
 </div>
@@ -283,18 +284,9 @@ required but a recommended convention
 here are some abbr's
 HTML and FUBAR
 
->:bulb: if your editor gets confused by
-not having and enclosing * then
-just add it to end of abbr def.
-
----
-
->:warning: Don't indent these, doesn't seem to work
-
 *[abbr]: Abbreviations
-*[def]: Definition
 *[HTML]: Hyper Text Markup Language
-*[FUBAR]:  You know what it means*
+*[FUBAR]: You know what it means
 
 ```
 
@@ -303,21 +295,13 @@ just add it to end of abbr def.
 here are some abbr's
 HTML and FUBAR
 
-> :bulb: if your editor gets confused by
-> not having and enclosing \* then
-> just add it to end of abbr def.
-
-> :warning: Don't indent these, doesn't seem to work
+*[abbr]: Abbreviations
+*[HTML]: Hyper Text Markup Language
+*[FUBAR]: You know what it means
 
 </div>
 </div>
 
-\*\[abbr]: Abbreviations
-\*\[def]: Definition
-\*\[HTML]: Hyper Text Markup Language
-*\[FUBAR]:  You know what it means*
-
-***
 
 ## Footnotes
 
@@ -340,99 +324,43 @@ of paragraph or page.
 <div markdown>
 
 Footnotes[^1] work like reference links
-They auto-number like ordered lists[^3]
+They auto-number like ordered lists[^2]
 You can use any
-reference id\[^text reference]
+reference id [^text reference]
 like ref links they can be
 organized at bottom
 of paragraph or page.
 
 [^1]: footnote, click the return icon here to go back ->
 
-[^3]: the number will not necessarily be what you use
-    \[^text reference]: text reference
+[^2]: the number will not necessarily be what you use
+[^text reference]: text reference
 
 </div>
 
 </div>
 
-***
-
-## Tables
-
-<div class="grid cards" markdown>
-
-```Markdown
-Colons can be used to align columns.
-3 dashes min to separate headers.
-Outer pipes (|) are optional,
-and you don't need to make the
-raw Markdown line up prettily.
-You can also use inline Markdown.
-
-|  Tables  |      Are      |   Cool    |
-| -------- |:-------------:| ---------:|
-| col 3 is | right-aligned |     $1600 |
-| col 2 is |   centered    |       $12 |
-|          |   **Total**   |   **$1612** |
-
-==Table== | **Format** | 👀 _scramble_
---- | --- | ---
-*Still* | `renders` | **nicely**
-[with links](images/dingus/image-small.png) | images ![zoomify](images/dingus/image-small.png){.tiny} | emojis 🍔
-icons _cloud_{.icon} | footnotes[^1] | use `<br>` <br> for multi-line <br> line breaks
-
-```
-
-<div markdown>
-
-Colons can be used to align columns.
-3 dashes min to separate headers.
-Outer pipes (|) are optional,
-and you don't need to make the
-raw Markdown line up prettily.
-You can also use inline Markdown.
-
-| Tables   |      Are      |       Cool |
-| -------- | :-----------: | ---------: |
-| col 3 is | right-aligned |     \$1600 |
-| col 2 is |    centered   |       \$12 |
-|          |   **Total**   | **\$1612** |
-
-| ==Table==                                   | **Format**                                              | 👀 _fun_                                        |
-| ------------------------------------------- | ------------------------------------------------------- | ----------------------------------------------- |
-| *Still*                                     | `renders`                                               | **nicely**                                      |
-| [with links](images/dingus/image-small.png) | images ![zoomify](images/dingus/image-small.png){.tiny} | emojis 🍔                                       |
-| icons _cloud_{.icon}                        | footnotes[^1]                                           | use `<br>` <br> for multi-line <br> line breaks |
-
-</div>
-</div>
-
-***
-
-### Blockquotes
+## Blockquotes
 
 <div class="grid cards" markdown>
 
 ```Markdown
 > Blockquotes are handy to callout text.
-they are greedy and will keep
-grabbing text. The '>' is optional unless trying join
->
+> they are greedy and will keep
+grabbing text. The '>' is optional unless trying to join
 paragraphs, tables etc.
 
-a blank line and a new paragraph
-or other markdown thing end them
+<br>
 
->:bulb:
-use a `---` seperator or `<br>`
-if you want multiple sepearte block quotes
+> a `<br` or other markdown thingys will end it 
 
 ---
 
-> can have nested
+> nested
+>
 > > blockquotes inside of block quotes
-block quotes can also contain any valid markdown
+> > block quotes can also contain any valid markdown
+
 
 ```
 
@@ -440,21 +368,16 @@ block quotes can also contain any valid markdown
 
 > Blockquotes are handy to callout text.
 > they are greedy and will keep
-> grabbing text. The '>' is optional unless trying join
->
-> paragraphs, tables etc.
+grabbing text. The '>' is optional unless trying to join
+paragraphs, tables etc.
 
-a blank line and a new paragraph
-or other markdown thing end them
+<br>
 
-> :bulb:
-> use a `---` seperator or `<br>`
-> if you want multiple seperate block quotes
-> to follow
+> a `<br` or other markdown thingys will end it 
 
-***
+---
 
-> can have nested
+> nested
 >
 > > blockquotes inside of block quotes
 > > block quotes can also contain any valid markdown
@@ -473,20 +396,20 @@ or other markdown thing end them
 > can be NOTE, WARNING, TIP, CAUTION, WARNING
 ```
 
-> \[!TIP]
+> [!TIP]
 > can be NOTE, WARNING, TIP, CAUTION, WARNING
 
-```
->? NOTE: **Click me to read more.**
->
-> Can also make them collapsible and put any content in here
-```
-
-> ? NOTE: **Click me to read more.**
->
-> Can also make them collapsible and put any content in here
-
 </div>
+
+```
+>?NOTE: __Click me to read more.__
+Can also make them collapsible and put any content in here
+
+```
+
+>?NOTE: __Click me to read more.__
+Can also make them collapsible and put any content in here
+
 
 ## Tab Blocks
 
@@ -508,164 +431,104 @@ or other markdown thing end them
     ```
 ````
 
-\=== "List of items"
-
-```
-* Sed sagittis eleifend rutrum
-* Donec vitae suscipit est
-* Nulla tempor lobortis orci
-```
-
-\=== "Source"
-
-````
-```
 === "List of items"
 
-* Sed sagittis eleifend rutrum
-* Donec vitae suscipit est
-* Nulla tempor lobortis orci
-```
-````
+    * Sed sagittis eleifend rutrum
+    * Donec vitae suscipit est
+    * Nulla tempor lobortis orci
+
+=== "Source"
+
+    ```
+    === "List of items"
+    
+        * Sed sagittis eleifend rutrum
+        * Donec vitae suscipit est
+        * Nulla tempor lobortis orci
+    ```
 
 </div>
 
 !!! example
 
-````
-=== "Unordered List"
+    === "Unordered List"
+    
+        ``` markdown
+        * Sed sagittis eleifend rutrum
+        * Donec vitae suscipit est
+        * Nulla tempor lobortis orci
+        ```
+    
+    === "Ordered List"
+    
+        ``` markdown
+        1. Sed sagittis eleifend rutrum
+        2. Donec vitae suscipit est
+        3. Nulla tempor lobortis orci
+        ```
 
-    ``` markdown
-    * Sed sagittis eleifend rutrum
-    * Donec vitae suscipit est
-    * Nulla tempor lobortis orci
-    ```
 
-=== "Ordered List"
 
-    ``` markdown
-    1. Sed sagittis eleifend rutrum
-    2. Donec vitae suscipit est
-    3. Nulla tempor lobortis orci
-    ```
-````
+## Tables
 
-***
-
-### Row Divs
-
-through out this doc we have been using a `<div markdown="1" class="two-column">`.
-
-````
-<div markdown="1" class="two-column">{++markdown="1" tells it to process what inside++}
-    {== <-needs to be a blank line for github to parse==}
-
-```markdown
-|foo | bar |
-|----|-----|
-|baz | buzz|
-```
-
-</div>
-<div markdown="1" class="two-column">
-
-|foo | bar |
-|----|-----|
-|baz | buzz|
-
-</div>  {== closes the div ==}
-
---- {== this clears the "float" REQUIRED when done==}
-````
-
-<div markdown="1" class="two-column">
+<div class="grid cards" markdown>
 
 ```Markdown
-|foo | bar |
-|----|-----|
-|baz | buzz|
+Colons can be used to align columns.
+3 dashes min to separate headers.
+Outer pipes (|) are optional,
+and you don't need to make the
+raw Markdown line up prettily.
+You can also use inline Markdown.
+
+|  Tables  |      Center   |   Right     |
+| -------- |:-------------:| -----------:|
+| col 3 is | basic         |     $1600   |
+| col 2 is |   centered    |       $12   |
+|          |   **Total**   |   **$1612** |
+
+==Table== | **Format** | 👀 _scramble_
+----------| --- | ---
+*Still* | `renders` | **nicely**
+[with links](images/dingus/image-small.png) | images ![zoomify](images/dingus/image-small.png){.tiny} | emojis 🍔
+icons _cloud_{.icon} | footnotes[^1] | use `<br>` <br> for multi-line <br> line breaks
+
+Can also import `csv`, `xlsx`, `yaml`, `json` using the [table-reader-plugin](https://timvink.github.io/mkdocs-table-reader-plugin/)  
+Works like this
+
+{{ read_csv('table-example.csv', colalign=("left","left","right")) }}
+
+{{ read_excel('table-example.xlsx', engine='openpyxl') }}
+
 ```
 
-</div>
-<div markdown="1" class="two-column">
+<div markdown>
 
-| foo | bar  |
-| --- | ---- |
-| baz | buzz |
+Colons can be used to align columns.
+3 dashes min to separate headers.
+Outer pipes (|) are optional,
+and you don't need to make the
+raw Markdown line up prettily.
+You can also use inline Markdown.
 
-</div>
+|  Tables  |      Center   |   Right     |
+| -------- |:-------------:| -----------:|
+| col 3 is | basic         |     $1600   |
+| col 2 is |   centered    |       $12   |
+|          |   **Total**   |   **$1612** |
 
-***
+| ==Table==                                   | __Format__                                              | 👀 *fun*                                        |
+| ------------------------------------------- | ------------------------------------------------------- | ----------------------------------------------- |
+| *Still*                                     | `renders`                                               | __nicely__                                      |
+| [with links](images/dingus/image-small.png) | images ![zoomify](images/dingus/image-small.png){.tiny} | emojis 🍔                                       |
+| icons *cloud*{.icon}                        | footnotes[^1]                                           | use `<br>` <br> for multi-line <br> line breaks |
 
-```
-<div markdown="1" class="row">
+Can also import `csv`, `xlsx`, `yaml`, `json` using the [table-reader-plugin](https://timvink.github.io/mkdocs-table-reader-plugin/)  
+Works like this
 
-> :bug: **here is another example**
-this uses the row class and will make
-any blocks, figures, etc equal spaced
+{{ read_csv('table-example.csv', colalign=("left","left","right")) }}
 
----
-
-> :thumbsup: they will be equal sizes
-with whatever width is left from image
-and as you can see the heights get adjusted to be equal as well
-
----
-
-![](images/dingus/image.png){.small}
-
-</div>
-```
-
-<div markdown="1" class="row">
-
-> :bug: **here is another example**
-> well just use admonitions and a table
-
-***
-
-> :thumbsup: they will be equal sizes
-> with whatever width is left from image
-> and as you can see the heights get adjusted to be equal as well
-
-***
-
-![](images/dingus/image.png){.small}
+{{ read_excel('table-example.xlsx', engine='openpyxl') }}
 
 </div>
-
-### Headings & Breaks
-
-<div markdown="1" class="row">
-
-> :camera:{.pct50}
->
-> ```Markdown
-> # h1 Heading
-> ## h2 Heading
-> ### h3 Heading
-> #### h4 Heading
->
-> Horizontal Rules
->
-> ---
->
-> ```
-
-***
-
-> :camera:
->
-> # h1 Heading
->
-> ## h2 Heading
->
-> ### h3 Heading
->
-> #### h4 Heading
->
-> Horizontal Rules
->
-> ***
-
 </div>

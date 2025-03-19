@@ -3,6 +3,7 @@ site_name: My Docs
 nav:
   - index.md
   - Cheat Sheet: cheat-sheet.md
+  - Github-Flavor.md
   - specimen.md
   - callouts.md
   - Embedding: embedding/index.md
@@ -31,13 +32,15 @@ theme:
   font:
     text: Lato
     code: Ubuntu Mono
+    headers: Rubik
+    # headers: Roboto Slab
   palette:
     - scheme: default
       # primary: blue grey
       primary: orange
       accent: indigo
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-night
         name: Switch to dark mode
     - scheme: slate
       primary: blue grey
@@ -64,11 +67,15 @@ plugins:
   - search
   - tags
   - meta
+  - table-reader
 # hooks:
 #   - overrides/hooks/shortcodes.py
 
 extra_css:
   - assets/styles.css
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - assets/extra.js
 markdown_extensions:
   - toc:
       # depth of the tocs

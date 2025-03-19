@@ -72,7 +72,12 @@ Then the format is just like Githubs. This allows rendering to work both places.
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
     massa, nec semper lorem quam in massa.
 
-NOTE: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+TIP: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+massa, nec semper lorem quam in massa.
+
+NOTE: **Lorem ipsum**  
+dolor sit amet, consectetur adipiscing elit. Nulla et euismod
 nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
 massa, nec semper lorem quam in massa.
 
@@ -81,12 +86,12 @@ massa, nec semper lorem quam in massa.
 > nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
 > massa, nec semper lorem quam in massa.
 
->? TIP: **Click me to read more.**
+>?TIP: **Click me to read more.**
 >
 > Can also make them collapsible and put any content in here
 >
-```
->? TIP: **Click me to read more.**
+> ```
+> ?TIP: **Click me to read more.**
 >
 > Can also make them collapsible and put any content in here
-```
+> ```

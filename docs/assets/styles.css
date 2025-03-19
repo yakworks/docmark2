@@ -23,8 +23,8 @@
 }
 
 :root,[data-md-color-scheme=default] {
-    --md-default-fg-color--light: #000000b2;
-    --md-default-fg-color--lighter: #0000008a;
+    --md-default-fg-color--light: #00000094;
+    /* --md-default-fg-color--lighter: #0000008a; */
 }
 
 /* fixes code when in grid card */
@@ -36,10 +36,11 @@
 }
 .md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
     color: var(--md-default-fg-color--light);
-    font-weight: 600;
+    font-weight: 500;
 }
 .md-typeset h2 {
-    border-bottom: 1px solid #F0F1F3;
+    border-bottom: 1px solid;
+    border-bottom-color: var(--md-default-fg-color--lightest);
     margin-top: 1em;
 }
 .md-typeset h1 {
